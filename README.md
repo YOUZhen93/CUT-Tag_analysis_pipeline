@@ -17,13 +17,6 @@ python ./CUTRUN_JSON_generator.py bulk-config.hg38.json ./${ID}.json fastq_direc
 then run main script:
 run_bulkModule.sh ${ID}.json ${ID}
 
-Notes: -M: analysis mode: input or peak. input: inputs are input fastq and only generate input bam file and bigwig track; peak: input files are peaks fastq.
-       -a: adapters has 4 options: stranded_illumina or illumina or none or BGI; users can provide their own adapter sequences, if two ends have different adapter seqs, use comma to separate them, e.g., ATGC,GTAC
-       -B: TRUE for broadpeak and FALSE for narrow one.
-       -P (optional): primary assembly bed file. Only keep primary assembly e.g.:
-
-
-### QC R script: chipseq_qc.R
-Notes: require ChIPQC R package, currently support hg38 only (modify R script with mm10 UCSC TxDb package to adapt mouse data)
-
+### json file bulk-config.json
+Notes: change organism_build option accordingly (mm10/hg38); experiment_type option can be CUT&Tag or CUT&Run; keep frag_120 to FALSE when running CUT&Tag
 
